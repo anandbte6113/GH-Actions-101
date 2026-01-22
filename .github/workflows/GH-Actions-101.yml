@@ -1,15 +1,20 @@
 name: GH-Actions-101 
 
-on: fork # [push,fork] 
+on: push # [push,fork] 
 
 jobs: 
     first-job:
         runs-on: ubuntu-latest
         steps: 
+            - name: Checkout the repo
+              uses: actions/checkout@v6
+              
             - name: welcome message
               run: echo "Hi welcome to GH-Actions-101, This is the first job you ran on ubuntu VM"
+            
             - name: List files 
               run: ls
+            
             - name: Read file
               run: cat README.md
               
